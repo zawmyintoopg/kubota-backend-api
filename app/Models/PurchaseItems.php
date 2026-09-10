@@ -6,10 +6,10 @@ use App\Models\Item;
 use App\Models\Purchase;
 use Illuminate\Database\Eloquent\Model;
 
-class PurchaseDetail extends Model
+class PurchaseItems extends Model
 {
     protected $fillable = [
-        'purchase_id', 'item_id', 'quantity', 'unit_price','discount_amount', 'total_price'
+        'purchase_id', 'product_id', 'product_name', 'part_number','quantity', 'unit_cost','amount'
     ];
 
     public function purchase() {

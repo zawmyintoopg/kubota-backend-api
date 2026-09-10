@@ -15,10 +15,8 @@ class Purchase extends Model
     use HasFactory;
 
     protected $fillable = [
-        'purchase_date', 'voucher_no', 'supplier_id', 'payment_method_id',
-        'transaction_type_id', 'user_id', 'shift_id',
-        'sub_total', 'discount_amount', 'tax_amount', 'grand_total',
-        'paid_amount', 'balance_amount', 'status'
+        'purchase_number','supplier_id','purchase_date', 'subtotal', 'discount_amount', 'total_amount',
+        'status', 'note', 'created_by'
     ];
 
     public function supplier() {
@@ -26,16 +24,5 @@ class Purchase extends Model
     }
     public function user() {
         return $this->belongsTo(User::class);
-    }
-    public function paymentMethod() {
-        return $this->belongsTo(paymentMethod::class);
-    }
-     public function items() {
-        return $this->belongsTo(Item::class);
-    }
-    
-    public function purchaseDetails()
-    {
-        return $this->hasMany(PurchaseDetail::class, 'purchase_id');
     }
 }

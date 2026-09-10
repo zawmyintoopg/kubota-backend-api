@@ -14,23 +14,13 @@ return new class extends Migration
         Schema::create('purchase_items', function (Blueprint $table) {
 
             $table->id();
-
             $table->integer('purchase_id');
-
-
             $table->integer('product_id');
-
-
             $table->string('product_name', 200);
-
             $table->string('part_number', 100);
-
             $table->integer('quantity');
-
             $table->decimal('unit_cost', 15, 2);
-
             $table->decimal('amount', 15, 2);
-
             $table->timestamps();
 
             });
